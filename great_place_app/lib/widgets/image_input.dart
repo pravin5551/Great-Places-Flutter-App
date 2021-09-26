@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
@@ -34,13 +33,14 @@ class _ImageInputState extends State<ImageInput> {
       // _storedImage = File(imageFile!.path);
 
     setState(() {
-      // _storedImage = imageFile as File?;
+
       _storedImage = File(imageFile!.path);
     });
-    // final appDir = await syspaths.getApplicationDocumentsDirectory();
-    // final fileName = path.basename(imageFile.path);
-    // final savedImage = await imageFile.copy('${appDir.path}/$fileName');
-    // widget.onSelectImage(savedImage);
+    final appDir = await syspaths.getApplicationDocumentsDirectory();
+    final fileName = path.basename(imageFile!.path);
+    final savedImage = await _storedImage!.copy('${appDir.path}/$fileName');
+
+    widget.onSelectImage(savedImage);
   }
 
   @override
