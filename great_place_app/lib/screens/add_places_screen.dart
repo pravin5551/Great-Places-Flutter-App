@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:great_place_app/models/place.dart';
 import 'package:great_place_app/providers/great_places.dart';
@@ -77,7 +76,6 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
             icon: Icon(Icons.add),
             label: Text('Add Place'),
             onPressed: _savePlace,
-
             elevation: 0,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             color: Theme.of(context).accentColor,
